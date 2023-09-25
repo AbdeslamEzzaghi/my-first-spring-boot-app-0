@@ -16,15 +16,15 @@ public class BasketballCoach implements Coach{
     }
 
     // init method
-    @PostConstruct
+    /*@PostConstruct
     public void doMyStartUp(){
         System.out.println("In doMyStartUp() :"+getClass().getSimpleName());
-    }
+    }*/
     // destroy method
-    @PreDestroy
+    /*@PreDestroy
     public void doMyCleanUp(){
         System.out.println("In doMyCleanUp :"+getClass().getSimpleName());
-    }
+    }*/
     @Override
     public String getDailyWorkout() {
         return "Practice 3pts shots !!!!!";

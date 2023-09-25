@@ -13,7 +13,7 @@ public class FunRestController {
     //private Coach anotherCoach;
     // define a constructor for dependency injection
     @Autowired // for injections
-    public FunRestController(@Qualifier("basketballCoach") Coach theCoach){
+    public FunRestController(@Qualifier("Aquatic") Coach theCoach){
         //System.out.println("In constructor :"+getClass().getSimpleName());
         myCoach = theCoach;
         //anotherCoach = theAnotherCoach;
