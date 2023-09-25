@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FunRestController {
     private Coach myCoach;
+    private Coach anotherCoach;
     // define a constructor for dependency injection
     @Autowired // for injections
-    public FunRestController(@Qualifier("basketballCoach") Coach theCoach){
-        System.out.println("In constructor :"+getClass().getSimpleName());
+    public FunRestController(@Qualifier("basketballCoach") Coach theCoach,
+                             @Qualifier("basketballCoach") Coach theAnotherCoach){
+        //System.out.println("In constructor :"+getClass().getSimpleName());
         myCoach = theCoach;
+        anotherCoach = theAnotherCoach;
     }
 
     /*
@@ -46,6 +49,9 @@ public class FunRestController {
         return " Here's your candy";
     }
 
-
+    @GetMapping("/check")
+    public String checkScope(){
+        return "the scope is : "+((anotherCoach==myCoach)?"SINGLETON":"PROTOTYPE");
+    }
 
 }
